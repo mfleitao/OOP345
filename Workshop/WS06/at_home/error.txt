@@ -1,0 +1,3 @@
+/tmp/ccGkqvjl.o: In function `sict::readRecord(std::basic_ifstream<char, std::char_traits<char> >&)':
+Product.cpp:(.text+0x262): undefined reference to `sict::TaxableProduct::TaxableProduct(int, double, char)'
+collect2: error: ld returned 1 exit status

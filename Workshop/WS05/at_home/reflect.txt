@@ -1,0 +1,60 @@
+/**********************************************************
+// Workshop 5: Functions
+// 2019/02/19
+// Matheus Fernando Leitao
+// ID: 148 300 171
+// Description: Reflection
+**********************************************************/
+
+1) The difference between the implementations of a functor and a lambda expression.
+
+A functor is a function object. It is the overloaded of the "()" operator and it encapsulates its 
+declaration/logic whithin its scope. It can be used in different places (reused). 
+In our Taxable class, the operator "()" is overloaded and when the constructor is called it initializes the "tax"
+member and also calls the functor - "float operator()(float price) const". At the same that it creates an object 
+Taxable it aplly the logic encapsulated whithin the functor - "return price * (taxRate + 1)".
+
+A lambda expression is an no-named function which its declaration/logic is whithin another function and 
+it's also called "closure". Lambda expression has some different type of sintax and way to capture the value.
+In our w5.cpp where I used lambda, I wrote a simple way to get the value using the capture empty list, which 
+is looks like "[](float grade) -> string { //logic to return letters }".
+
+
+2) A list of the exceptions that you have reported and the cases where you terminated execution normally.
+
+The Exceptions declared were:
+
+	Function: KVList::const T& operator[](size_t i) const { ... }
+	Exception: throw "ERROR: The index passed to the subscripting operator is out-of-bounds";
+	
+	Function: KVList::KVList(int size) { ... }
+	Exception: throw "ERROR: The number of elements received in the constructor is not positive-valued";
+	
+	Function: main() { ... } // w5.cpp
+	Exceptions: std::cerr << "ERROR: Process of PriceList File [" << e.what() << "]" << std::endl;
+				std::cerr << "ERROR: Process of Student File [" << e.what() << "]" << std::endl;
+	
+	exit(1); // 1 first exit (the number of parameters is different than expected)
+	exit(2); // 2 second exit (error processing PriceList file)
+	exit(3); // 3 third exit (error processing Student file)
+
+
+*** QUIZ 5 ***
+
+// I wrote down only the answers or points where I made mistake
+
+1. algorithms
+
+2. stack, queue
+
+4. list
+
+5.
+	#include <deque>
+	
+	q.push_front(67.8f);
+	q.push_back(67.8f);
+	
+	for (auto i = q.begin(); i != q.end(); i++)
+			std:: << *i << std::endl;
+

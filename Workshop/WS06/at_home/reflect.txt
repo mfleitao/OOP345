@@ -1,0 +1,44 @@
+/**********************************************************
+// Workshop 6 - STL Containers
+// 2019/03/12
+// Matheus Fernando Leitao
+// ID: 148 300 171
+// Description: Reflection
+**********************************************************/
+
+- The reason for using the vector container rather than any other available in the STL.
+
+The vector was used because it's the most similar container compare to an array. Another point
+is that vectors handle their destruction when a object is out of scope.
+
+
+- Why there is no need to deallocate the dynamically allocated memory in your own code.
+
+It's not necessary because vectors deallocate memory automaticaly when a object is out of scope.
+
+
+- How the range-based for simplifies coding in this case.
+
+In a sample when I used range-based at Sale.cpp file "for (auto& product : products)", the 
+products member is a vector of iProduct, so to run this I used auto as a type because it's not
+defined (polymorphic) and it could be any type. Also, to get the value from the "product" in this
+case I accessed it by "*product" which is a pointer to the element.
+
+
+*** QUIZ 6 ***
+
+4. transfom
+
+5. int result = std::accumulate(a.begin(), a.end(), (int)0);
+
+6. 
+	#include <iostream>	
+	#include <fstream>
+
+	int main() {
+		std::fstream file("file", std::ios::in | std::ios::binary);
+		char input[10];
+		file.read(input, 10);
+		for (int i = 0; i < 10; i++)
+			std::cout << input[i] << std::endl;
+	}

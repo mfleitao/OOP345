@@ -1,0 +1,52 @@
+/**********************************************************
+// Workshop 4: Containers
+// 2019/02/05
+// Matheus Fernando Leitao
+// ID: 148 300 171
+// Description: Reflection
+**********************************************************/
+
+1) The difference between the implementations of a composition and an aggregation.
+
+Both are less couple than inheritance, however with their differences. Composition is part of a class
+which means that a child class needs its parent class to exist. The child class in this case has a strong
+dependency of its parent class. It can be seen between "Message" and "MessagePack" class which have a 
+composition - MessagePack has a member typed Message, so MessagePack cannot exist without Message.
+In case of aggregation the child class can exist without a dependency of parent class. They are only related
+to each other but they can work independently. This the case of Notifications class which has an aggregation
+of Message class. There's a relationship between those but Notifications can exist without Message.
+
+
+2) The difference between the implementations of move and copy functions in a composition and an aggregation.
+
+In the composition class both functions (copy and move) deal with an array of Message and in the aggregation
+class same functions deal with an array of pointers. 
+
+
+
+*** QUIZ 4 ***
+
+// 1. 
+template<typename T>
+auto nml(const T& a, const T& b) -> decltype(a * b) {
+	return a * b;
+}
+
+// 3. 
+double (*f)(int);
+
+// 4.
+class Add {
+	int predefinedValue;
+public:
+	Add(int a) : predefined(a) {}
+	int operator()(int x) const { 
+		return x + predefined; 
+	}
+}
+
+// 7.
+exit()
+
+
+

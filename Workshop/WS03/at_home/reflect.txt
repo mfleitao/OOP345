@@ -1,0 +1,37 @@
+/**********************************************************
+// Workshop 3: Templates
+// 2019/02/05
+// Matheus Fernando Leitao
+// ID: 148 300 171
+// Description: Reflection
+**********************************************************/
+
+1) The reason for specializing the sum() member function.
+
+The reason for this specializing is because the first version of sum() assumes that the parameter
+passed is a number, so that's why we needed another template with a different signature for string, because
+this second version make concatenates two values with a " " (space) because them. 
+
+
+2) The reason for specializing the initial value for a summation.
+
+As mentioned before at the first question, a specializing for the "initial" member was necessary
+because it can be interpreted as a number or as a string, so that's why it's initialized for both types.
+
+
+3) The reason for defining the class variable outside the class definition.
+
+Because a class variable is a static member and it belongs to class. Its context requires another 
+template declaration to initializes it. 
+
+
+*** QUIZ 3 ***
+
+3. lvalue
+
+5. static_cast, dynamic_cast, reinterpret_cast, const_cast
+
+8. true
+
+9. 1 1 
+

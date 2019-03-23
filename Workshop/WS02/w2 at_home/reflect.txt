@@ -1,0 +1,60 @@
+/**********************************************************
+// Workshop 2: Move and Copy Semantics
+// 2019/01/29
+// Matheus Fernando Leitao
+// ID: 148 300 171
+// Description: Reflection
+**********************************************************/
+
+1) The reason for the difference between the copy and move operations
+
+The reason is because move operations are more efficient in terms of manipulation of addresses.
+Instead of copying the whole object into a new one like a copy operation does, move operation
+simplifies manipulating the addresses of original object to another. 
+
+2) The dynamic allocation of addresses to objects instead of objects themselves
+
+In dynamic allocation of an address there's no needed, for example in a array, to run the elements
+to copy each address into the new location/object. In this case just the assignment between the objects
+is necessary to move the address to the new object which is more efficient in terms of performance. 
+
+
+3) The changes you made in upgrading your w2 and Text modules.
+
+I declared two more functions on the Text.h file which are for the move operation:
+The Text parameter is an address which is represented by the "&&"
+	Text(Text&& t);
+	Text& operator=(Text&& t);
+
+Then on the Text.cpp file those functions were defined:
+	- The constructor only needs the following declaration which uses the std::move to understand that
+	what is passed by parameter is an address.
+		*this = std::move(source);
+	
+	- Finally, the definition of the whole functionality which moves the address from the source to the current object
+	and then set zero and nullptr to the source which is not going to be used anymore. 
+
+
+
+*** QUIZ 2 ***
+
+1. FALSE
+
+2. TRUE
+
+3. clone()
+
+4. Liskov Substitution
+
+5. FALSE
+
+6. template <class T = long, int max = 100>
+	class List {
+          int a[max]{};
+          T no {0}; 
+        public:
+          T& operator[](int i) { return a[i]; }
+          T operator[](int i) const { return a[i]; }
+      };
+
+
